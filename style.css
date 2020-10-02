@@ -1,0 +1,131 @@
+:root {
+    --main-color: #12437d;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: var(--main-color);
+}
+
+.phone-parts > img {
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.phone-parts {
+    width: 50%;
+}
+
+form {
+    width: 50%;
+}
+
+.section-cart {
+    width: 100%;
+    margin: 45px 0 0 0;
+}
+
+.line-box {
+    width: 54%;
+    margin: -12px 0 0 0;
+}
+
+.cart-options {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.cart-options-item {
+    border-radius: 20px;
+    width: 128px;
+    padding: 25px 0 5px 0px;
+}
+
+.cart-options-item:hover {
+    border: 3px solid var(--main-color);
+    cursor: pointer;
+}
+
+.options-item-img {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/**********ELIMINAR EN CASO DE QUITAR LA ETIQUEA <a>****************************/
+.cart-options-item > a > h3 {
+    text-align: center;
+}
+/***************************************************************/
+
+.cart-options-item > h3 {
+    text-align: center;
+}
+
+#brand > .cart-options > .cart-options-item {
+    margin: 10px 5px 10px 5px;
+}
+#brand > .cart-options {
+    margin: 0 5px 0 5px;
+    justify-content: flex-start;
+}
+
+#brand > .title-box > .line-box {
+    width: 59%;
+}
+
+.brand-input {
+    border-radius: 5px;
+    border: 1px solid var(--main-color);
+    height: 35px;
+    padding: 0 0 0 10px;
+    margin: 30px 0 0 0;
+}
+
+.brand-input:focus {
+    outline: none;
+    border: 3px solid var(--main-color);
+}
+
+.brand-input::placeholder {
+    color: var(--main-color);
+}
+
+#model > .title-box > .line-box {
+    width: 61%;
+}
+
+#phone-model {
+    width: 58%;
+    border-radius: 5px;
+    height: 35px;
+}
+
+.btn-cotizar {
+    color: #ffffff;
+    background-color: var(--main-color);
+    padding: 5px 25px 5px 25px;
+    margin: 0px 0 0 0;
+    border-radius: 6px;
+}
+
+#price > .title-box > .line-box {
+    width: 45%;
+}
