@@ -112,7 +112,8 @@ form {
     width: 61%;
 }
 
-#phone-model {
+#phone-model,
+#warranty-type {
     width: 58%;
     border-radius: 5px;
     height: 35px;
