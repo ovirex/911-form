@@ -108,12 +108,20 @@ form {
     color: var(--main-color);
 }
 
+.brand-input:disabled {
+    border-color: rgba(118, 118, 118, 0.3);
+}
+.brand-input:disabled::placeholder {
+    color: grey;
+    opacity: 0.5;
+}
+
 #model > .title-box > .line-box {
     width: 61%;
 }
 
 #phone-model,
-#warranty-type {
+#guarantee-type {
     width: 58%;
     border-radius: 5px;
     height: 35px;
@@ -123,8 +131,8 @@ form {
     color: #ffffff;
     background-color: var(--main-color);
     padding: 5px 25px 5px 25px;
-    margin: 0px 0 0 0;
     border-radius: 6px;
+    border: none;
 }
 
 #price > .title-box > .line-box {
