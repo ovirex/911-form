@@ -3,6 +3,7 @@ window.onload = function () {
     const inputBrandList = document.getElementsByName("brand");
     const selectModel = document.getElementById("phone-model");
     const otherBrandInput = document.getElementById("other-brand");
+    const guaranteeSelect = document.getElementById("guarantee-type");
 
     const cotizarBtn = document.getElementById("cotizar-btn");
 
@@ -326,6 +327,7 @@ window.onload = function () {
                 selectedBrand = "";
                 selectModel.innerHTML = "";
                 selectModel.disabled = true;
+                guaranteeSelect.disabled = true;
                 otherBrandInput.disabled = false;
             } else {
                 this.children[2].checked = true;
@@ -333,6 +335,7 @@ window.onload = function () {
                 selectedBrand = this.id;
                 switchSelectOptions(selectedBrand);
                 selectModel.disabled = false;
+                guaranteeSelect.disabled = false;
                 otherBrandInput.disabled = true;
             }
         });
