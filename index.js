@@ -1,4 +1,7 @@
 window.onload = function () {
+    const bodyTag = document.getElementsByTagName("body")[0];
+    bodyTag.style.display = "block";
+
     const inputProblemList = document.getElementsByName("problem");
     const inputBrandList = document.getElementsByName("brand");
     const selectModel = document.getElementById("phone-model");
@@ -15,12 +18,19 @@ window.onload = function () {
     let selectedProblem = "";
     let price = document.getElementById("price-text");
 
-    cotizarBtn.addEventListener("click", function (e) {
+    /**Validation Function **/
+    cotizarBtn.addEventListener("click", function () {
         const otherBrandInput = document.getElementById("other-brand");
         const guaranteeTypeSelect = document.getElementById("guarantee-type");
         const selectedGuaranteeType =
             guaranteeTypeSelect.options[guaranteeTypeSelect.selectedIndex];
         const selectedModel = selectModel.options[selectModel.selectedIndex];
+
+        if (selectModel.disabled && guaranteeSelect.disabled) {
+            const openPopup = exitingPopup.bind(popupExitBtn);
+            openPopup();
+            return;
+        }
 
         if (selectedBrand == "") {
             selectedBrand = otherBrandInput.value;
@@ -358,7 +368,7 @@ window.onload = function () {
 
     /** POPUP exit btn*/
 
-    popupExitBtn.addEventListener("click", function () {
+    function exitingPopup() {
         if (this.children[0].checked) {
             this.children[0].checked = false;
             popupForm.style.display = "none";
@@ -366,7 +376,9 @@ window.onload = function () {
             this.children[0].checked = true;
             popupForm.style.display = "block";
         }
-    });
+    }
+
+    popupExitBtn.addEventListener("click", exitingPopup);
 
     /**** Agrega opciones al select de modelo al escoger una marca ****/
 
