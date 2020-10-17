@@ -6,6 +6,10 @@ window.onload = function () {
     const guaranteeSelect = document.getElementById("guarantee-type");
 
     const cotizarBtn = document.getElementById("cotizar-btn");
+    const popupForm = document.getElementById("mail-popup");
+    const popupExitBtn = document.getElementsByClassName(
+        "exit-popup-container"
+    )[0];
 
     let selectedBrand = "";
     let selectedProblem = "";
@@ -351,6 +355,18 @@ window.onload = function () {
             }
         });
     }
+
+    /** POPUP exit btn*/
+
+    popupExitBtn.addEventListener("click", function () {
+        if (this.children[0].checked) {
+            this.children[0].checked = false;
+            popupForm.style.display = "none";
+        } else {
+            this.children[0].checked = true;
+            popupForm.style.display = "block";
+        }
+    });
 
     /**** Agrega opciones al select de modelo al escoger una marca ****/
 

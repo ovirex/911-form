@@ -13,6 +13,10 @@
     color: var(--main-color);
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .phone-parts > img {
     position: relative;
 }
@@ -142,4 +146,118 @@ form {
 input[type="radio"] {
     /* visibility: hidden; */
     display: none;
+}
+
+.popup-container {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    height: 70%;
+    /* background-image: url("./assets/FONDO\ -\ POP\ UP.png");
+    background-size: cover;
+    background-repeat: no-repeat; */
+}
+
+.popup-container::before {
+    content: "";
+    width: 100vw;
+    height: 101vh;
+    background-color: rgba(1, 1, 1, 0.6);
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transform: translate(-25%, -15%);
+    position: absolute;
+}
+
+.popup-inner-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    top: 0;
+    left: 35px;
+    width: 90%;
+    height: 100%;
+    align-items: center;
+}
+
+.popup-inner-card {
+    width: 50%;
+}
+
+.popup-inner-card > input,
+.popup-inner-card > textarea {
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    height: 25px;
+    margin: 15px 0 0 0;
+    padding: 0 0 0 10px;
+}
+
+.popup-inner-card > textarea {
+    resize: none;
+    height: 70px;
+}
+
+.popup-inner-card:first-child {
+    padding: 0 15% 0 0;
+}
+
+.popup-inner-card h3,
+.popup-inner-card p {
+    color: white;
+}
+
+.popup-bg {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-container {
+    text-align: end;
+    margin: 15px 0 0 0;
+}
+
+.btn-container > input {
+    border-radius: 5px;
+    padding: 5px 25px;
+    border: none;
+    font-weight: 900;
+    background-color: red; /*cambiar color*/
+    color: white;
+}
+
+.exit-popup-container {
+    position: absolute;
+    transform: translate(50%, 50%);
+    right: 10%;
+    top: 2%;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.exit-popup-container input {
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    z-index: 100;
+}
+
+.exit-popup-container h1 {
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    z-index: 2;
+    width: 100%;
+    line-height: 1;
+}
+
+.exit-popup-container > h1,
+.exit-popup-container > input {
+    position: absolute;
 }
