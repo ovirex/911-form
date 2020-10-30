@@ -398,7 +398,7 @@ window.onload = function () {
                 break;
             case "huawei":
                 selectModel.innerHTML =
-                    '<option value="1">huawei 1</option><option value="2">huawei 2</ption> <option value="3">huawei 3</option><option value="4">huawei 4</option><option value="5">huawei 5</option>';
+                    '<option value="huawei-p10">Huawei P10</option><option value="huawei-p10-lite">Huawei P10 Lite</option><option value="huawei-p20">Huawei P20</option><option value="huawei-p20-lite">Huawei P20 Lite</option><option value="huawei-p30">Huawei P30</option><option value="huawei-p30-lite">Huawei P30 Lite</option><option value="huawei-p8">Huawei P8</option><option value="huawei-p8-lite">Huawei P8 Lite</option><option value="huawei-p9">Huawei P9</option><option value="huawei-p9-lite">Huawei P9 Lite</option><option value="huawei-y5-2019">Huawei Y5 2019</option><option value="huawei-y6-2017">Huawei Y6 2017</option><option value="huawei-y6-2018">Huawei Y6 2018</option><option value="huawei-y9-2019">Huawei Y9 2019</option><option value="huawei-honor-7a">Huawei Honor 7A</option><option value="huawei-honor-8x">Huawei Honor 8X</option><option value="huawei-p-smart">Huawei P SMART</option><option value="huawei-p-smart-2019">Huawei P SMART 2019</option><option value="huawei-mate-10">Huawei MATE 10</option><option value="huawei-mate-20-lite">Huawei MATE 20 Lite</option>';
                 break;
             case "sony":
                 selectModel.innerHTML =
