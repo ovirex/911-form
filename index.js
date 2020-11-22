@@ -212,10 +212,6 @@ window.onload = function () {
                 selectModel.innerHTML =
                     '<option value="1">siragon 1</option><option value="2">siragon 2</ption> <option value="3">siragon 3</option><option value="4">siragon 4</option><option value="5">siragon 5</option>';
                 break;
-            case "zte":
-                selectModel.innerHTML =
-                    '<option value="1">zte 1</option><option value="2">zte 2</ption> <option value="3">zte 3</option><option value="4">zte 4</option><option value="5">zte 5</option>';
-                break;
             case "lg":
                 selectModel.innerHTML =
                     '<option value="1">lg 1</option><option value="2">lg 2</ption> <option value="3">lg 3</option><option value="4">lg 4</option><option value="5">lg 5</option>';
@@ -223,10 +219,6 @@ window.onload = function () {
             case "krip":
                 selectModel.innerHTML =
                     '<option value="1">krip 1</option><option value="2">krip 2</ption> <option value="3">krip 3</option><option value="4">krip 4</option><option value="5">krip 5</option>';
-                break;
-            case "yezz":
-                selectModel.innerHTML =
-                    '<option value="1">yezz 1</option><option value="2">yezz 2</ption> <option value="3">yezz 3</option><option value="4">yezz 4</option><option value="5">yezz 5</option>';
                 break;
             case "motorola":
                 selectModel.innerHTML =
