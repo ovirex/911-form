@@ -279,3 +279,43 @@ input[type="radio"] {
 .exit-popup-container > input {
     position: absolute;
 }
+
+@media screen and (max-width: 769px) {
+    .phone-parts {
+        display: none;
+    }
+
+    #main-form {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .cart-options {
+        justify-content: space-evenly;
+    }
+
+    #brand > .cart-options {
+        justify-content: center;
+    }
+
+    main {
+        padding: 0 40px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .brand-input {
+        width: 100%;
+    }
+
+    #phone-model,
+    #guarantee-type {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 356px) {
+    main {
+        padding: 0 20px;
+    }
+}
