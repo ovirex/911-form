@@ -45,272 +45,68 @@ window.onload = function () {
             return;
         }
 
-        price.innerHTML = `$${
-            problemsBudget[selectedModel.value][selectedProblem][
-                selectedGuaranteeType.value
-            ]
-        }.00`;
+        fetch("http://911smartphones.com/JSON/prices.json")
+            .then((response) => {
+                console.log(response);
+                return response.json();
+            })
+            .then((data) => {
+                let model = false;
+                let problem = false;
+                let guarantee = false;
+
+                (function () {
+                    if (data.hasOwnProperty(selectedModel.value)) {
+                        model = true;
+                        if (
+                            data[selectedModel.value].hasOwnProperty(
+                                selectedProblem
+                            )
+                        ) {
+                            problem = true;
+                            if (
+                                data[selectedModel.value][
+                                    selectedProblem
+                                ].hasOwnProperty(selectedGuaranteeType.value)
+                            ) {
+                                guarantee = true;
+                            } else {
+                                return;
+                            }
+                        } else {
+                            return;
+                        }
+                    } else {
+                        return;
+                    }
+                })();
+
+                if (model == true && problem == true && guarantee == true) {
+                    const mainTag = document.getElementsByTagName("main")[0];
+                    const mainHeight = mainTag.offsetHeight;
+                    const mainBottomMargin = window.getComputedStyle(mainTag)
+                        .marginBottom;
+                    const bottomPosition =
+                        mainHeight + parseInt(mainBottomMargin);
+                    console.log(mainHeight, mainBottomMargin);
+
+                    window.scrollTo({
+                        top: bottomPosition,
+                        behavior: "smooth",
+                    });
+
+                    price.innerHTML = `$${
+                        data[selectedModel.value][selectedProblem][
+                            selectedGuaranteeType.value
+                        ]
+                    }.00`;
+                } else {
+                    const openPopup = exitingPopup.bind(popupExitBtn);
+                    openPopup();
+                }
+            })
+            .catch((error) => console.log(error));
     });
-    const problemsBudget = {
-        "iphone-5": {
-            "pantalla-rota": {
-                B: 25,
-                AAA: 35,
-            },
-        },
-        "iphone-6": {
-            "pantalla-rota": {
-                B: 35,
-                AAA: 45,
-            },
-        },
-        "iphone-6-plus": {
-            "pantalla-rota": {
-                B: 39,
-                AAA: 49,
-            },
-        },
-        "iphone-7": {
-            "pantalla-rota": {
-                B: 45,
-                AAA: 55,
-            },
-        },
-        "iphone-7-plus": {
-            "pantalla-rota": {
-                B: 49,
-                AAA: 59,
-            },
-        },
-        "iphone-8": {
-            "pantalla-rota": {
-                B: 55,
-                AAA: 65,
-            },
-        },
-        "iphone-8-plus": {
-            "pantalla-rota": {
-                B: 59,
-                AAA: 69,
-            },
-        },
-        "iphone-x": {
-            "pantalla-rota": {
-                B: 179,
-                AAA: 199,
-            },
-        },
-        "iphone-xs": {
-            "pantalla-rota": {
-                B: 195,
-                AAA: 215,
-            },
-        },
-        "iphone-xr": {
-            "pantalla-rota": {
-                B: 105,
-                AAA: 159,
-            },
-        },
-        "iphone-11": {
-            "pantalla-rota": {
-                B: 199,
-                AAA: 219,
-            },
-        },
-        "iphone-11-pro": {
-            "pantalla-rota": {
-                B: 435,
-                AAA: 455,
-            },
-        },
-        "iphone-11-pro-max": {
-            "pantalla-rota": {
-                B: 445,
-                AAA: 465,
-            },
-        },
-        "iphone-xs-max": {
-            "pantalla-rota": {
-                B: 199,
-                AAA: 269,
-            },
-        },
-        "samsung-j4": {
-            "pantalla-rota": {
-                B: 49,
-                AAA: 65,
-            },
-        },
-        "samsung-j5": {
-            "pantalla-rota": {
-                B: 49,
-                AAA: 59,
-            },
-        },
-        "samsung-j510": {
-            "pantalla-rota": {
-                B: 49,
-                AAA: 65,
-            },
-        },
-        "samsung-j530": {
-            "pantalla-rota": {
-                B: 49,
-                AAA: 69,
-            },
-        },
-        "samsung-j4+": {
-            "pantalla-rota": {
-                B: 65,
-                AAA: 75,
-            },
-        },
-        "samsung-j6": {
-            "pantalla-rota": {
-                B: 65,
-                AAA: 85,
-            },
-        },
-        "samsung-j7": {
-            "pantalla-rota": {
-                B: 45,
-                AAA: 55,
-            },
-        },
-        "samsung-j701": {
-            "pantalla-rota": {
-                B: 49,
-                AAA: 59,
-            },
-        },
-        "samsung-j7pro": {
-            "pantalla-rota": {
-                B: 49,
-                AAA: 69,
-            },
-        },
-        "samsung-j8": {
-            "pantalla-rota": {
-                B: 69,
-                AAA: 89,
-            },
-        },
-        "samsung-j810": {
-            "pantalla-rota": {
-                B: 65,
-                AAA: 85,
-            },
-        },
-        "samsung-s5": {
-            "pantalla-rota": {
-                B: 55,
-                AAA: 85,
-            },
-        },
-        "samsung-s8": {
-            "pantalla-rota": {
-                B: 215,
-                AAA: 235,
-            },
-        },
-        "samsung-s9": {
-            "pantalla-rota": {
-                B: 245,
-                AAA: 259,
-            },
-        },
-        "samsung-s9-plus": {
-            "pantalla-rota": {
-                B: 249,
-                AAA: 289,
-            },
-        },
-        "samsung-s10+": {
-            "pantalla-rota": {
-                B: 399,
-                AAA: 409,
-            },
-        },
-        "samsung-a10": {
-            "pantalla-rota": {
-                B: 69,
-                AAA: 79,
-            },
-        },
-        "samsung-a01": {
-            "pantalla-rota": {
-                B: 65,
-                AAA: 75,
-            },
-        },
-        "samsung-a20": {
-            "pantalla-rota": {
-                B: 89,
-                AAA: 105,
-            },
-        },
-        "samsung-a30": {
-            "pantalla-rota": {
-                B: 89,
-                AAA: 119,
-            },
-        },
-        "samsung-a50": {
-            "pantalla-rota": {
-                B: 79,
-                AAA: 95,
-            },
-        },
-        "samsung-a51": {
-            "pantalla-rota": {
-                B: 169,
-                AAA: 189,
-            },
-        },
-        "samsung-a70": {
-            "pantalla-rota": {
-                B: 95,
-                AAA: 175,
-            },
-        },
-        "samsung-a80": {
-            "pantalla-rota": {
-                B: 189,
-                AAA: 205,
-            },
-        },
-        "samsung-a520": {
-            "pantalla-rota": {
-                B: 69,
-                AAA: 79,
-            },
-        },
-        "samsung-a8": {
-            "pantalla-rota": {
-                B: 99,
-                AAA: 105,
-            },
-        },
-        "samsung-a51": {
-            "pantalla-rota": {
-                B: 169,
-                AAA: 189,
-            },
-        },
-        "samsung-a7": {
-            "pantalla-rota": {
-                B: 119,
-                AAA: 129,
-            },
-        },
-        "samsung-note-9": {
-            "pantalla-rota": {
-                B: 255,
-                AAA: 275,
-            },
-        },
-    };
 
     for (let i = 0; i < inputProblemList.length; i++) {
         inputProblemList[i].parentNode.addEventListener("click", function () {
