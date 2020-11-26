@@ -159,9 +159,11 @@ input[type="radio"] {
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
-    width: 50%;
-    height: 70%;
+
+    height: 500px;
     display: none;
+    max-width: 660px;
+    min-width: 290px;
     /* background-image: url("./assets/FONDO\ -\ POP\ UP.png");
     background-size: cover;
     background-repeat: no-repeat; */
@@ -169,13 +171,13 @@ input[type="radio"] {
 
 .popup-container::before {
     content: "";
-    width: 100vw;
-    height: 101vh;
+    width: 200vw;
+    height: 200vh;
     background-color: rgba(1, 1, 1, 0.6);
     z-index: -1;
     top: 0;
     left: 0;
-    transform: translate(-25%, -15%);
+    transform: translate(-50%, -50%);
     position: absolute;
 }
 
@@ -280,6 +282,8 @@ input[type="radio"] {
     position: absolute;
 }
 
+/*TABLET*/
+
 @media screen and (max-width: 769px) {
     .phone-parts {
         display: none;
@@ -301,7 +305,22 @@ input[type="radio"] {
     main {
         padding: 0 40px;
     }
+
+    .popup-inner-container {
+        flex-direction: column;
+        left: 15px;
+    }
+
+    .popup-inner-card {
+        width: 80%;
+    }
+
+    .popup-container {
+        height: 645px;
+    }
 }
+
+/*MOBILE*/
 
 @media screen and (max-width: 430px) {
     .brand-input {
