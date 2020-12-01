@@ -1,4 +1,4 @@
-window.onload = function () {
+window.addEventListener("load", function () {
     const bodyTag = document.getElementsByTagName("body")[0];
     bodyTag.style.display = "block";
 
@@ -45,7 +45,7 @@ window.onload = function () {
             return;
         }
 
-        fetch("http://911smartphones.com/JSON/prices.json")
+        fetch("https://911smartphones.com/JSON/prices.json")
             .then((response) => {
                 console.log(response);
                 return response.json();
@@ -230,4 +230,4 @@ window.onload = function () {
                 break;
         }
     }
-};
+});
