@@ -1,0 +1,22 @@
+{
+  "name": "911-formulario",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ovirex/911-form.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ovirex/911-form/issues"
+  },
+  "homepage": "https://github.com/ovirex/911-form#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
