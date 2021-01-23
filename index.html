@@ -350,7 +350,12 @@
                 </div>
             </form>
 
-            <form action="#" class="popup-container" id="mail-popup">
+            <form
+                action="/contact"
+                method="POST"
+                class="popup-container"
+                id="mail-popup"
+            >
                 <div class="exit-popup-container">
                     <input type="checkbox" name="" id="exit-popup-check" />
                     <h1>X</h1>
@@ -374,29 +379,34 @@
                     </div>
                     <div class="popup-inner-card">
                         <h3>Datos de Contacto</h3>
-                        <input type="text" name="" id="" placeholder="Nombre" />
                         <input
                             type="text"
                             name=""
-                            id=""
+                            id="client-name"
+                            placeholder="Nombre"
+                        />
+                        <input
+                            type="text"
+                            name=""
+                            id="client-number"
                             placeholder="Número de teléfono"
                         />
                         <input
                             type="email"
                             name=""
-                            id=""
+                            id="client-mail"
                             placeholder="Correo"
                         />
                         <textarea
                             name=""
-                            id=""
+                            id="client-msg"
                             placeholder="Cuéntanos qué sucede"
                             rows="100"
                             maxlength="200"
                         ></textarea>
                         <div class="btn-container">
                             <input
-                                type="button"
+                                type="submit"
                                 value="Enviar"
                                 id="send-mail-btn"
                             />
