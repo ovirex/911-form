@@ -3,11 +3,11 @@ const app = express();
 
 const { sendEmail } = require("./emailCtrl");
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use("/public", express.static("public"));
 
-app.get("/", (req, res) => {
+app.get("/servicio-tecnico", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
 
