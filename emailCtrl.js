@@ -1,13 +1,9 @@
 const nodemailer = require("nodemailer");
 
-if (process.env.NODE_ENV !== "production") {
-    require("dotenv").config();
-}
+require("dotenv").config();
 
 exports.sendEmail = function (req, res) {
     console.log(req.body);
-    console.log(process.env);
-    debugger;
     const {
         clientName,
         clientNumber,
